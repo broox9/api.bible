@@ -1,6 +1,10 @@
 {
-  "name": "Bible API",
+  "name": "Bible_API",
   "version": "0.0.1",
   "description": "An API for the Bible",
-  "Author": "Brookes Stephens"
+  "Author": "Brookes Stephens",
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "lodash": "~2.4.1"
+  }
 }

@@ -1,6 +1,12 @@
 {
-  "name": "Bible API",
+  "name": "Bible_API",
   "version": "0.0.1",
   "description": "An API for the Bible",
-  "Author": "Brookes Stephens"
+  "Author": "Brookes Stephens",
+  "dependencies": {
+    "bower": "^1.3.12"
+  },
+  "devDependencies": {
+    "http-server": "^0.7.4"
+  }
 }

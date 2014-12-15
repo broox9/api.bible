@@ -3,8 +3,17 @@
   %head
     %title Bible Api
 
-    -#%script(src="")
+    %script(src="/lib/lodash/dist/lodash.min.js")
+    %script(src="/lib/jquery/dist/jquery.min.js")
+
+    -# Bible Data
+    %script(src="/js/data/key_english.js")
+    %script(src="/js/data/t_kjv.js")
 
   %body
     #content
       = yield
+
+
+
+  %script(src="/js/api.bible.js")

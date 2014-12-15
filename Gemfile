@@ -10,3 +10,7 @@ gem 'sinatra-activerecord', '~> 2.0.3'
 #templates
 gem 'multi_json', '~> 1.10.1'
 gem 'haml', '~> 4.0.6'
+
+group :test, :development do
+  gem "rspec"
+end
