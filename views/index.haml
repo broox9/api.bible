@@ -1,6 +1,21 @@
-%h1 Bible API
+%header
+  %h1 Bible API
 
-%input#verseInput(type="text")
-%button#submitVerse Go
+%section
+  %h3 Verse look up by ID
+  %input#verseInput(type="text" placeholder="ex. 008005005")
+  %button#submitVerse Go
 
-#verse
+  #single-verse
+
+
+%section
+  %label(for='selector')
+  %select#selector
+    %option(value='') select book
+  %select#chapter
+    %option(value='') select chapter
+
+#reader
+  %h3 Reader
+  %section#reader-content

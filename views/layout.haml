@@ -1,19 +1,31 @@
-!!!
+!!! 5
 %html
   %head
     %title Bible Api
 
-    %script(src="/lib/lodash/dist/lodash.min.js")
-    %script(src="/lib/jquery/dist/jquery.min.js")
+    -# protocol meta tags
+    %meta(http-equiv="Cache-Control" content="no-cache")
+    %meta(http-equiv="Cache-Control" content="max-age=60")
 
-    -# Bible Data
-    %script(src="/js/data/key_english.js")
-    %script(src="/js/data/t_kjv.js")
+    -# webapp meta tags
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
+    %meta(name="apple-mobile-web-app-capable" content="yes")
+    %meta(name="meta-apple-mobile-web-app-status-bar-style" content="black")
+
+    = css :bundle, :media => 'screen'
+    %link(rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 416px)")
+    -# %link(rel="stylesheet" href="/lib/normalize.css/normalize.css")
+    -# %link(rel="stylesheet" href="/css/app.css")
+    -# %link(rel="stylesheet" href="/css/mobile.css" media="(max-width: 416px)")
+    -# %script(src="/lib/lodash/dist/lodash.min.js")
+    -# %script(src="/lib/jquery/dist/jquery.min.js")
+    -# %script(src="/js/api.bible.js")
+    -# %script(src="/js/api.bible.connector.js")
 
   %body
     #content
       = yield
 
 
-
-  %script(src="/js/api.bible.js")
+  = js :libs
+  = js :application
