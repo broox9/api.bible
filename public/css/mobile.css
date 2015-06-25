@@ -1,0 +1,32 @@
+html,body {
+  font-size: 100%;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+section {
+  margin: 8px;
+  padding: 8px;
+}
+
+#reader > section {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* == reader simple mode */
+[data-mode="simple"] .verse {
+  display: table;
+  margin: 0.75em 0;
+}
+
+[data-mode="simple"] .verse .verse-number {
+  font-size: 0.7857em;
+}
+
+[data-mode="simple"] .verse .verse-text {
+  display: table-cell;
+  line-height: 1.3em;
+}
