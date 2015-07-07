@@ -1,0 +1,21 @@
+  ### DATABASE ##########
+# development:
+#   adapter: mysql2
+#   host: 127.0.0.1
+#   username: "root"
+#   password: ""
+#   database: "MyChurchBible"
+
+development:
+  adapter: postgresql
+  host: 127.0.0.1
+  username: admin
+  password:
+  database: Bible_Api
+
+production:
+  adapter: postgresql
+  host: 127.0.0.1
+  username: admin
+  password:
+  database: Bible_Api

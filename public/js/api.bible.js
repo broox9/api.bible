@@ -19,8 +19,8 @@ $(function() {
   }
 
   function buildSimpleChapterHtml (element, chapter) {
-    var html = chapter.map(function (verse) {
-      return '<span class="verse"><span class="verse-number">' + verse.v + '</span><span class="verse-text">' + verse.t + '</span></span>';
+    var html = chapter.map(function (item) {
+      return '<span class="verse"><span class="verse-number">' + item.verse + '</span><span class="verse-text">' + item.words + '</span></span>';
     })
     $(element).attr('data-mode','simple').html(html.join(''));
   }

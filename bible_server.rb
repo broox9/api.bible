@@ -6,6 +6,7 @@ require 'sinatra/cross_origin'
 require 'sinatra/assetpack'
 require 'json'
 require 'haml'
+require './config/environments.rb'
 
 # class BibleServer < Sinatra::Base  ### Development environment settings ##########
 
@@ -13,7 +14,7 @@ require 'haml'
   # register Sinatra::CrossOrigin
   # register Sinatra::AssetPack
 
-  set :environment, :production #Will need to use ENV['RACK_ENV']
+  # set :environment, :production #Will need to use ENV['RACK_ENV']
   # set :app_file, __FILE__
   # set :root, File.dirname(__FILE__)
   set :public_folder, File.dirname(__FILE__) + '/public'
@@ -27,15 +28,6 @@ require 'haml'
   configure do
     enable :cross_origin
   end
-
-  ### DATABASE ##########
-  ActiveRecord::Base.establish_connection(
-      :adapter  => "mysql2",
-      :host     => "127.0.0.1",
-      :username => "root",
-      :password => "",
-      :database => "MyChurchBible"
-  )
 
   assets do
     js :libs, [
@@ -62,10 +54,14 @@ require 'haml'
   # We will have to see about renaming/remodeling these tables ...
   class BaseBible < ActiveRecord::Base
     # self.table_name = "t_kjv"
-    self.table_name = "t_bbe"
+    # self.table_name = "t_bbe"
     # self.table_name = "t_web"
+    self.table_name = "bible_en_verses"
   end
 
+  class DetailBible < ActiveRecord::Base
+    self.table_name = "bible_en"
+  end
 
   ## other translations can be called something else but KJV is the base
   class KeyEnglish < ActiveRecord::Base
@@ -76,9 +72,7 @@ require 'haml'
     self.table_name ="cross_reference"
   end
 
-  class DetailBible < ActiveRecord::Base
-    self.table_name = "bible_en"
-  end
+
 
 
 
@@ -99,13 +93,14 @@ require 'haml'
 
 
   get "/api/advanced/verse/:id" do
-    verse = DetailBible.where(['verseID = :verse_id', {verse_id: params[:id]} ]).order(:lang_order)
+    verse = DetailBible.where(['verseid = :verse_id', {verse_id: params[:id]} ]).order(:lang_order)
     content_type :json
     verse.to_json
   end
 
-  get "/api/simple/verse/:id" do
-    verse = BaseBible.find(params[:id])
+  get "/api/simple/verse/:verse_id" do
+    verse = BaseBible.find_by(verseid: params[:verse_id])
+    logger.info "~~~~~~ VERSE #{params[:verse_id]} ~~~ #{verse}"
     content_type :json
     verse.to_json
   end
@@ -118,7 +113,7 @@ require 'haml'
   end
 
   get "/api/simple/chapter/:book/:chapter" do
-    chapter = BaseBible.where(b: params[:book], c: params[:chapter]).order('v ASC')
+    chapter = BaseBible.where(book: params[:book], chapter: params[:chapter]).order('verse ASC')
     content_type :json
     chapter.to_json
   end
@@ -126,14 +121,14 @@ require 'haml'
 
   get "/api/book_chapters/:book" do
     bookNumber = params[:book] || 1
-    book_count = BaseBible.where(b: params[:book]).count
+    book_count = BaseBible.where(book: params[:book]).count
     content_type :json
     book_count.to_json
   end
 
   get "/api/book/:book" do
     bookNumber = params[:book] || 1
-    book = BaseBible.where(b: params[:book])
+    book = BaseBible.where(book: params[:book])
     content_type :json
     book.to_json
   end
