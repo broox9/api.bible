@@ -49,7 +49,7 @@ $(function() {
   // = HANDLERS ----------------------------------------------------------
   $('#submitVerse').click(function (e) {
     var id = $('#verseInput').val();
-    var verse = Bq.getVerseById(id);
+    var verse = Bq.getVerseById(id, {advanced_mode: true});
 
     verse.then(function (json) {
       return JSON.parse(json);

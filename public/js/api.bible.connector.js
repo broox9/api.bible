@@ -78,7 +78,8 @@
   }
 
   function _checkMode(opts) {
-    return (opts)? _mode_string(opts.mode) : _mode_string(this.advanced_mode)
+    console.log("Opts", opts);
+    return (opts)? _mode_string(opts.advanced_mode) : _mode_string(this.advanced_mode)
   }
 
   function _request (url) {

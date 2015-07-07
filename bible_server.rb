@@ -93,14 +93,14 @@ require './config/environments.rb'
 
 
   get "/api/advanced/verse/:id" do
-    verse = DetailBible.where(['verseid = :verse_id', {verse_id: params[:id]} ]).order(:lang_order)
+    verse = DetailBible.where(['verseid = :v_id', {v_id: params[:id]} ]).order(:lang_order)
     content_type :json
     verse.to_json
   end
 
   get "/api/simple/verse/:verse_id" do
     verse = BaseBible.find_by(verseid: params[:verse_id])
-    logger.info "~~~~~~ VERSE #{params[:verse_id]} ~~~ #{verse}"
+    # logger.info "~~~~~~ VERSE #{params[:verse_id]} ~~~ #{verse}"
     content_type :json
     verse.to_json
   end
@@ -113,7 +113,7 @@ require './config/environments.rb'
   end
 
   get "/api/simple/chapter/:book/:chapter" do
-    chapter = BaseBible.where(book: params[:book], chapter: params[:chapter]).order('verse ASC')
+    chapter = BaseBible.where(book: params[:book], chapter: params[:chapter]).order(:verse)
     content_type :json
     chapter.to_json
   end

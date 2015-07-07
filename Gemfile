@@ -15,13 +15,13 @@ gem 'multi_json', '~> 1.10.1'
 gem 'haml', '~> 4.0.6'
 
 #app server
-# gem 'puma', '~> 2.11.3'
+gem 'puma', '~> 2.11.3'
 # gem 'unicorn', '~> 4.9.0'
 # gem 'thin', '~> 1.6.3'
 
 group :development do
   gem 'capistrano', '~> 3.4.0'
-  gem 'mysql2', '~> 0.3.17'
+  # gem 'mysql2', '~> 0.3.17'
 end
 
 group :test, :development do
