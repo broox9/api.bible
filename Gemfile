@@ -15,8 +15,8 @@ gem 'multi_json', '~> 1.10.1'
 gem 'haml', '~> 4.0.6'
 
 #app server
-gem 'puma', '~> 2.11.3'
-# gem 'unicorn', '~> 4.9.0'
+# gem 'puma', '~> 2.11.3'
+gem 'unicorn', '~> 4.9.0'
 # gem 'thin', '~> 1.6.3'
 
 group :development do

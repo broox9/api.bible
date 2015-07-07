@@ -1,13 +1,14 @@
 ### Server:
-Google Cloud (Ruby) 104.154.58.185
-user: Brookes
+Digital Ocean
+user:
 url: ''
+
 
 ### Stack:
 - Ruby 2.1.1
 - RVM
 - Sinatra
-- node 0.10.29 /npm (for bower)
+- (nvm) node 0.10.29 /npm (for bower)
 - bower
 - Apache
 
