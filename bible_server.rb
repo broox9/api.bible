@@ -4,9 +4,10 @@ require 'sinatra/base'
 require 'sinatra/activerecord'
 require 'sinatra/cross_origin'
 require 'sinatra/assetpack'
+# require 'sinatra/config_file'
 require 'json'
 require 'haml'
-require './config/environments.rb'
+
 
 # class BibleServer < Sinatra::Base  ### Development environment settings ##########
 
@@ -14,11 +15,14 @@ require './config/environments.rb'
   # register Sinatra::CrossOrigin
   # register Sinatra::AssetPack
 
-  # set :environment, :production #Will need to use ENV['RACK_ENV']
-  # set :app_file, __FILE__
-  # set :root, File.dirname(__FILE__)
+  set :environment, ENV['RACK_ENV']
+  set :logging, true
+  set :root, File.dirname(__FILE__)
+  set :app_file, __FILE__
   set :public_folder, File.dirname(__FILE__) + '/public'
   set :haml, :format => :html5
+
+  require './config/environments.rb'
 
   # set :allow_origin, :any
   # set :allow_methods, [:get, :post, :options]
@@ -27,8 +31,10 @@ require './config/environments.rb'
   # set :expose_headers, ['Content-Type']
   configure do
     enable :cross_origin
+    enable :logging
   end
 
+  # TODO Move to environments.rb / production
   assets do
     js :libs, [
       '/lib/jquery/dist/jquery.min.js',
@@ -140,7 +146,7 @@ require './config/environments.rb'
   end
 
   get "/" do
-    @bible = BaseBible.all()
+    # @bible = BaseBible.all()
     haml :index
     #send_file File.expand_path('normal.html', settings.public_folder)
   end

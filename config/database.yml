@@ -16,6 +16,6 @@ development:
 production:
   adapter: postgresql
   host: 127.0.0.1
-  username: admin
-  password:
+  username: rails
+  password: 3SpgTRWJXH
   database: Bible_Api

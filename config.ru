@@ -1,7 +1,8 @@
-require 'rubygems'
-# require 'sinatra'
-require './bible_server'
 
-set :port, 3005
+require 'sinatra'
+require './bible_server.rb'
+
+
+
 
 run Sinatra::Application

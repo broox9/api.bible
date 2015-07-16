@@ -12,6 +12,11 @@ url: ''
 - bower
 - Apache
 
+## DB
+- Postgres 9.3
+- secrets.yml not checked in
+- name: Bible_Api
+
 
 #Repo
 - github: api.bible git@github.com:broox9/api.bible.git

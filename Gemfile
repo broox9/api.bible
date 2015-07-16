@@ -1,9 +1,14 @@
 source 'https://rubygems.org'
 ruby "2.2.1"
 
-gem 'sinatra', '~> 1.4.5'
 
+# database
 gem 'pg', '~> 0.18.2'
+# gem 'mysql2', '~> 0.3.17'
+
+gem 'sinatra', '~> 1.4.5'
+gem 'sinatra-contrib', '~> 1.4.6'
+
 gem 'activerecord', '~> 4.1.8'  #started with active record
 #gem 'datamapper', '~> 1.2.0'     #ended with datamapper for multiple DB's
 gem 'sinatra-activerecord', '~> 2.0.3'
@@ -19,9 +24,12 @@ gem 'haml', '~> 4.0.6'
 gem 'unicorn', '~> 4.9.0'
 # gem 'thin', '~> 1.6.3'
 
+
+#configs and junk
+gem 'config_for', '~> 0.2.1'
+
 group :development do
   gem 'capistrano', '~> 3.4.0'
-  # gem 'mysql2', '~> 0.3.17'
 end
 
 group :test, :development do

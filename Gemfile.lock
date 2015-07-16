@@ -15,12 +15,15 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    backports (3.6.5)
     builder (3.2.2)
     capistrano (3.4.0)
       i18n
       rake (>= 10.0.0)
       sshkit (~> 1.3)
     colorize (0.7.7)
+    config_for (0.2.1)
+      activesupport (>= 3.0)
     diff-lcs (1.2.4)
     haml (4.0.6)
       tilt
@@ -61,6 +64,13 @@ GEM
       rack-test
       sinatra
       tilt (>= 1.3.0, < 2.0)
+    sinatra-contrib (1.4.6)
+      backports (>= 2.0)
+      multi_json
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.0)
+      tilt (>= 1.3, < 3)
     sinatra-cross_origin (0.3.2)
     sshkit (1.7.1)
       colorize (>= 0.7.0)
@@ -81,6 +91,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord (~> 4.1.8)
   capistrano (~> 3.4.0)
+  config_for (~> 0.2.1)
   haml (~> 4.0.6)
   multi_json (~> 1.10.1)
   pg (~> 0.18.2)
@@ -88,6 +99,7 @@ DEPENDENCIES
   sinatra (~> 1.4.5)
   sinatra-activerecord (~> 2.0.3)
   sinatra-assetpack (~> 0.3.3)
+  sinatra-contrib (~> 1.4.6)
   sinatra-cross_origin (~> 0.3.1)
   unicorn (~> 4.9.0)
 
