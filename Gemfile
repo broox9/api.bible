@@ -28,9 +28,10 @@ gem 'unicorn', '~> 4.9.0'
 #configs and junk
 gem 'config_for', '~> 0.2.1'
 
-group :development do
-  gem 'capistrano', '~> 3.4.0'
-end
+# Deployments
+gem 'capistrano', '~> 3.4.0'
+gem 'capistrano-bundler', '~> 1.1.4'
+
 
 group :test, :development do
   gem "rspec"

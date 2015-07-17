@@ -4,7 +4,6 @@ require 'sinatra/base'
 require 'sinatra/activerecord'
 require 'sinatra/cross_origin'
 require 'sinatra/assetpack'
-# require 'sinatra/config_file'
 require 'json'
 require 'haml'
 
@@ -98,15 +97,14 @@ require 'haml'
   end
 
 
-  get "/api/advanced/verse/:id" do
-    verse = DetailBible.where(['verseid = :v_id', {v_id: params[:id]} ]).order(:lang_order)
+  get "/api/advanced/verse/:verse_id" do
+    verse = DetailBible.where(['verseid = :v_id', {v_id: params[:verse_id]} ]).order(:lang_order)
     content_type :json
     verse.to_json
   end
 
   get "/api/simple/verse/:verse_id" do
     verse = BaseBible.find_by(verseid: params[:verse_id])
-    # logger.info "~~~~~~ VERSE #{params[:verse_id]} ~~~ #{verse}"
     content_type :json
     verse.to_json
   end
