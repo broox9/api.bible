@@ -7,9 +7,9 @@ configure :development do
 	set :port, 3005
 end
 
-configure :production do
-		set :port, 8080
-end
+# configure :production do
+# 		set :port, 8080
+# end
 
 configure :production, :development do
 	db = YAML.load_file("#{File.dirname(__FILE__)}/secrets.yml")[ENV['RACK_ENV']]['db_config']

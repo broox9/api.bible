@@ -3,3 +3,6 @@ node_modules/
 public/lib/
 DATABASE_STUFF.txt
 config/secrets.yml
+tmp/pids
+tmp/sockets
+log/*

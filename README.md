@@ -1,21 +1,25 @@
 ### Server:
 Digital Ocean
-user:
-url: ''
+20GB / 512MB
+swapfile 2GB (swapiness=10, vfc_cache_pressure=50)
+article on swap: https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04
+
 
 
 ### Stack:
-- Ruby 2.1.1
+- Ruby 2.2.1
 - RVM
 - Sinatra
-- (nvm) node 0.10.29 /npm (for bower)
-- bower
-- Apache
+- node 0.10.25
+- bower (will remove)
+- nginx
+- unicorn (unicorn.api_bible.rb)
 
 ## DB
 - Postgres 9.3
 - secrets.yml not checked in
 - name: Bible_Api
+- get pgAdmin3 working: https://www.digitalocean.com/community/questions/connect-to-droplet-running-postgresql-9-3-with-pgadmin3
 
 
 #Repo
