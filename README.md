@@ -14,12 +14,13 @@ article on swap: https://www.digitalocean.com/community/tutorials/how-to-add-swa
 - bower (will remove)
 - nginx
 - unicorn (unicorn.api_bible.rb) //not using
-- shotgun (to keep it alive)
+- puma
+- shotgun (to keep it alive, shotgun --server=thin --port=6000 config.ru)
 
 ## DB
 - Postgres 9.3
-- secrets.yml not checked in
-- name: Bible_Api
+- secrets.yml/database.yaml not checked in
+- name: bible_api
 - get pgAdmin3 working: https://www.digitalocean.com/community/questions/connect-to-droplet-running-postgresql-9-3-with-pgadmin3
 
 
