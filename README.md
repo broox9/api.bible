@@ -15,7 +15,7 @@ article on swap: https://www.digitalocean.com/community/tutorials/how-to-add-swa
 - nginx
 - unicorn (unicorn.api_bible.rb) //not using
 - puma
-- shotgun (to keep it alive, shotgun --server=thin --port=6000 config.ru)
+- shotgun (to keep it alive, shotgun --server=puma --port==3005 config.ru)
 
 ## DB
 - Postgres 9.3

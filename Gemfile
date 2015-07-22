@@ -23,7 +23,7 @@ gem 'haml', '~> 4.0.6'
 gem 'puma', '~> 2.11.3'
 gem 'shotgun', '~> 0.9.1'
 # gem 'unicorn', '~> 4.9.0'
-# gem 'thin', '~> 1.6.3'
+gem 'thin', '~> 1.6.3'
 
 
 #configs and junk
