@@ -31,6 +31,7 @@ require 'haml'
   configure do
     enable :cross_origin
     enable :logging
+    set :session_secret, "secret password"
   end
 
   # TODO Move to environments.rb / production

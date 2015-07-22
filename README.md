@@ -13,7 +13,8 @@ article on swap: https://www.digitalocean.com/community/tutorials/how-to-add-swa
 - node 0.10.25
 - bower (will remove)
 - nginx
-- unicorn (unicorn.api_bible.rb)
+- unicorn (unicorn.api_bible.rb) //not using
+- shotgun (to keep it alive)
 
 ## DB
 - Postgres 9.3

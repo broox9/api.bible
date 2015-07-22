@@ -5,4 +5,4 @@ DATABASE_STUFF.txt
 config/secrets.yml
 tmp/pids
 tmp/sockets
-log/*
+log/unicorn.log
