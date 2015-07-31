@@ -4,12 +4,12 @@ $(function() {
   var submit_btn = $('#submitVerse');
   var verse_input = $('#verseInput');
   var verse = $('#verse');
-  var Bq = window.bq  = new BibleQuery(false);
+  var Bq = new BibleQuery(false);
   console.log("BQ", Bq);
   var current_book = null;
   var current_chapter = null;
 
-  // = FUNCTIONS ----------------------------------------------------------
+  // = FUNCTIONS TODO: CLEAN UP THIS UGLINESS WITH A FRAMEWORK -------------- */
   function addBooks (element, books) {
     var html = books.map(function (book, i) {
       return '<option value ="' + book.id + '">' + book.name + '</option>';

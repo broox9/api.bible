@@ -1,3 +1,7 @@
+** This is mainly for the API to the Bible DB, but i'm setting up a connection js module ``public/js/api.bible.connector.js`` that will abstract DB calls from the front end.  may make a ruby module too **
+
+``api.bible.js`` is just there to pull in the connector module and wire up some events so i have a small page to test the API's from
+
 ### Server:
 Digital Ocean Ubuntu 14.04
 20GB / 512MB
