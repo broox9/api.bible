@@ -3,8 +3,8 @@ ruby "2.2.0"
 
 
 # database
-gem 'pg', '~> 0.18.2'
-# gem 'mysql2', '~> 0.3.17'
+# gem 'pg', '~> 0.18.2'
+gem 'mysql2', '~> 0.3.17'
 
 gem 'sinatra', '~> 1.4.5'
 gem 'sinatra-contrib', '~> 1.4.6'
