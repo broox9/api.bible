@@ -13,7 +13,7 @@
     %meta(name="meta-apple-mobile-web-app-status-bar-style" content="black")
 
     = css :bundle, :media => 'screen'
-    %link(rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 416px)")
+    %link(rel="stylesheet" href="/assets/css/mobile.css" media="screen and (max-width: 416px)")
     -# %link(rel="stylesheet" href="/lib/normalize.css/normalize.css")
     -# %link(rel="stylesheet" href="/css/app.css")
     -# %link(rel="stylesheet" href="/css/mobile.css" media="(max-width: 416px)")
@@ -25,7 +25,6 @@
   %body
     #content
       = yield
-
 
   = js :libs
   = js :application

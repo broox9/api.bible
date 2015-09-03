@@ -1,6 +1,6 @@
 .idea/
 node_modules/
-public/lib/
+public/assets/lib/
 DATABASE_STUFF.txt
 config/secrets.yml
 tmp/pids

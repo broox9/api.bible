@@ -4,6 +4,8 @@ require 'sinatra/base'
 require 'sinatra/activerecord'
 require 'sinatra/cross_origin'
 require 'sinatra/assetpack'
+# require 'sprockets'
+# require 'sprockets-helpers'
 require 'json'
 require 'haml'
 
@@ -13,6 +15,7 @@ require 'haml'
   # register Sinatra::ActiveRecordExtension
   # register Sinatra::CrossOrigin
   # register Sinatra::AssetPack
+  # register Sinatra::AssetPipeline
 
   set :environment, ENV['RACK_ENV']
   set :logging, true
@@ -28,27 +31,22 @@ require 'haml'
   # set :allow_credentials, true
   # set :max_age, "1728000"
   # set :expose_headers, ['Content-Type']
-  configure do
-    enable :cross_origin
-    enable :logging
-    set :session_secret, "secret password" # for shotgun
-  end
 
   # TODO Move to environments.rb / production
   assets do
     js :libs, [
-      '/lib/jquery/dist/jquery.min.js',
-      '/lib/lodash/dist/lodash.min.js'
+      '/assets/lib/jquery/dist/jquery.min.js',
+      '/assets/lib/lodash/dist/lodash.min.js'
     ]
 
     js :application, [
-      '/js/api.bible.connector.js',
-      '/js/api.bible.js'
+      '/assets/js/api.bible.connector.js',
+      '/assets/js/api.bible.js'
     ]
 
     css :bundle, [
-      '/lib/normalize.css/normalize.css',
-      '/css/app.css'
+      '/assets/lib/normalize.css/normalize.css',
+      '/assets/css/app.css'
     ]
 
     js_compression :jsmin

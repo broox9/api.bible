@@ -8,6 +8,7 @@ GIT
 
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     activemodel (4.1.8)
       activesupport (= 4.1.8)
@@ -54,6 +55,9 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rails-assets-jquery (2.1.4)
+    rails-assets-normalize-css (3.0.3)
+    rails-assets-underscore (1.8.3)
     rake (10.4.2)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
@@ -99,6 +103,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord (~> 4.1.8)
+  bundler (~> 1.10.6)
   capistrano (= 3.4.0)
   capistrano-bundler (~> 1.1.2)
   capistrano-rbenv!
@@ -107,6 +112,9 @@ DEPENDENCIES
   multi_json (~> 1.10.1)
   pg (~> 0.18.2)
   puma (~> 2.11.3)
+  rails-assets-jquery!
+  rails-assets-normalize-css!
+  rails-assets-underscore!
   rspec
   shotgun (~> 0.9.1)
   sinatra (~> 1.4.5)
