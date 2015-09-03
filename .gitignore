@@ -6,3 +6,4 @@ config/secrets.yml
 tmp/pids
 tmp/sockets
 log/unicorn.log
+.elasticbeanstalk/

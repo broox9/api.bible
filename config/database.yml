@@ -7,8 +7,7 @@
 #   database: "MyChurchBible"
 
 development:
-  # adapter: postgresql
-  adapter: mysql2
+  adapter: postgresql
   host: 127.0.0.1
   username: admin
   password:
@@ -17,6 +16,6 @@ development:
 production:
   adapter: postgresql
   host: 127.0.0.1
-  username: rails
-  password: qFbs5069Ch
+  username: deploy
+  password: buckshot
   database: Bible_Api

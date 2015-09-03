@@ -13,11 +13,11 @@ steps on Rbenv install/ Bundler no docs: https://gorails.com/setup/ubuntu/14.04
 
 
 ### Stack:
-- Ruby 2.2.0
-- ~~RBenv / RBenv-gemset~~
-- RVM
+- Ruby 2.2.1
+- RBenv / RBenv-gemset - https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-14-04
+- ~~RVM~~
 - Sinatra
-- node 0.10.25
+- node 0.12.7 https://nodesource.com/blog/nodejs-v012-iojs-and-the-nodesource-linux-repositories
 - ~~bower (will remove)~~
 - nginx & phusion passenger
 - ~~unicorn (unicorn.api_bible.rb)~~
@@ -35,4 +35,5 @@ steps on Rbenv install/ Bundler no docs: https://gorails.com/setup/ubuntu/14.04
 - github: api.bible git@github.com:broox9/api.bible.git
 
 # Deployment
-Capistrano 3.4.0
+- Capistrano 3.4.0
+https://semaphoreci.com/community/tutorials/how-to-deploy-sinatra-applications-with-capistrano
