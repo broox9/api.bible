@@ -12,6 +12,7 @@ end
 # end
 
 configure :production, :development do
+	set :port, 3005
 	db = YAML.load_file("#{File.dirname(__FILE__)}/secrets.yml")[ENV['RACK_ENV']]['db_config']
 	# db_config = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/Bible_Api') # HEROKU
 	# db_config = URI.parse("#{db['adapter']}://#{db['user']}:#{db['password']}@#{db['host']}/#{db['database']}")

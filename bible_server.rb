@@ -16,7 +16,7 @@ require 'haml'
   # register Sinatra::CrossOrigin
   # register Sinatra::AssetPack
   # register Sinatra::AssetPipeline
-
+  
   set :environment, ENV['RACK_ENV']
   set :logging, true
   set :root, File.dirname(__FILE__)
